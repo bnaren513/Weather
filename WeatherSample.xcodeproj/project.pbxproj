@@ -36,6 +36,7 @@
 		9ACA4AAB25C881A600DBFB4D /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACA4AAA25C881A600DBFB4D /* ForecastViewController.swift */; };
 		9ACA4AB025C883C000DBFB4D /* ForeCastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACA4AAF25C883C000DBFB4D /* ForeCastViewModel.swift */; };
 		9ACA4AB525C885D600DBFB4D /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACA4AB425C885D600DBFB4D /* ForecastTableViewCell.swift */; };
+		9AE203E125C924F7007DF653 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE203E025C924F7007DF653 /* HelpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		9ACA4AAA25C881A600DBFB4D /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		9ACA4AAF25C883C000DBFB4D /* ForeCastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeCastViewModel.swift; sourceTree = "<group>"; };
 		9ACA4AB425C885D600DBFB4D /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		9AE203E025C924F7007DF653 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 		9ACA4A0A25C826F500DBFB4D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9AE203DF25C924DF007DF653 /* Help */,
 				9ACA4AA625C8818300DBFB4D /* Forecast */,
 				9ACA4A5325C8657C00DBFB4D /* CityList */,
 				9ACA4A4525C8315C00DBFB4D /* Popup */,
@@ -269,6 +272,14 @@
 				9ACA4AB425C885D600DBFB4D /* ForecastTableViewCell.swift */,
 			);
 			path = Forecast;
+			sourceTree = "<group>";
+		};
+		9AE203DF25C924DF007DF653 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				9AE203E025C924F7007DF653 /* HelpViewController.swift */,
+			);
+			path = Help;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +426,7 @@
 				9ACA4A4725C8317C00DBFB4D /* PopupViewController.swift in Sources */,
 				9ACA4A1E25C8289800DBFB4D /* Weather.swift in Sources */,
 				9ACA49E625C7FA3A00DBFB4D /* ServiceManager.swift in Sources */,
+				9AE203E125C924F7007DF653 /* HelpViewController.swift in Sources */,
 				9ACA4A1425C8285900DBFB4D /* Coord.swift in Sources */,
 				9ACA4A0C25C8281D00DBFB4D /* WeatherObject.swift in Sources */,
 				9ACA49D125C7EA8C00DBFB4D /* Constants.swift in Sources */,

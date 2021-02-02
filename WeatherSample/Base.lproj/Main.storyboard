@@ -422,7 +422,18 @@
                                 <state key="normal" backgroundImage="gearshape" catalog="system"/>
                                 <connections>
                                     <action selector="settingsAction:" destination="6s0-aC-ikG" eventType="touchUpInside" id="zDz-Bc-mjq"/>
-                                    <action selector="weatherShow" destination="6s0-aC-ikG" eventType="touchUpInside" id="W6o-bj-Cox"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QsB-ga-YTA">
+                                <rect key="frame" x="349" y="607.5" width="40" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="EoY-5Q-4ao"/>
+                                    <constraint firstAttribute="height" constant="40" id="Vfn-8s-3BB"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" backgroundImage="info.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="helpAction:" destination="6s0-aC-ikG" eventType="touchUpInside" id="Cez-PU-9eZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -432,6 +443,7 @@
                             <constraint firstItem="eAe-G4-iNc" firstAttribute="centerX" secondItem="nma-i1-JQx" secondAttribute="centerX" id="0ES-7t-X3y"/>
                             <constraint firstItem="oB1-6c-yyS" firstAttribute="top" secondItem="Uq2-b8-yZ4" secondAttribute="bottom" id="0Uq-dH-6dQ"/>
                             <constraint firstItem="OCx-EH-PA9" firstAttribute="trailing" secondItem="ozH-TR-rcC" secondAttribute="trailing" constant="25" id="1OE-Jh-mhs"/>
+                            <constraint firstItem="ozH-TR-rcC" firstAttribute="top" secondItem="QsB-ga-YTA" secondAttribute="bottom" constant="20" id="1b2-HC-cxk"/>
                             <constraint firstItem="ylw-Su-YRg" firstAttribute="leading" secondItem="OCx-EH-PA9" secondAttribute="leading" id="4Bp-1L-oqh"/>
                             <constraint firstItem="HYo-oG-euQ" firstAttribute="trailing" secondItem="OCx-EH-PA9" secondAttribute="trailing" id="75T-fs-dDy"/>
                             <constraint firstItem="eAe-G4-iNc" firstAttribute="top" secondItem="oB1-6c-yyS" secondAttribute="bottom" constant="10" id="7JZ-sF-7nG"/>
@@ -463,6 +475,7 @@
                             <constraint firstItem="HYo-oG-euQ" firstAttribute="leading" secondItem="OCx-EH-PA9" secondAttribute="leading" id="ufe-45-0kI"/>
                             <constraint firstItem="Uq2-b8-yZ4" firstAttribute="top" secondItem="OCx-EH-PA9" secondAttribute="top" constant="30" id="v2m-2V-LIQ"/>
                             <constraint firstItem="OCx-EH-PA9" firstAttribute="trailing" secondItem="oB1-6c-yyS" secondAttribute="trailing" constant="30" id="vwu-1D-SHH"/>
+                            <constraint firstItem="OCx-EH-PA9" firstAttribute="trailing" secondItem="QsB-ga-YTA" secondAttribute="trailing" constant="25" id="wz3-FP-MK1"/>
                             <constraint firstItem="ylw-Su-YRg" firstAttribute="top" secondItem="eyg-Zo-I5X" secondAttribute="bottom" constant="5" id="xmu-bJ-L5j"/>
                         </constraints>
                     </view>
@@ -484,7 +497,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYS-Uw-AEp" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2868.0803571428569" y="126.08695652173914"/>
+            <point key="canvasLocation" x="2866.666666666667" y="125.89285714285714"/>
         </scene>
         <!--Popup View Controller-->
         <scene sceneID="6W9-PA-LzD">
@@ -804,11 +817,71 @@ Cg
             </objects>
             <point key="canvasLocation" x="3584" y="127"/>
         </scene>
+        <!--Help View Controller-->
+        <scene sceneID="cNq-0N-5oZ">
+            <objects>
+                <viewController storyboardIdentifier="HelpViewController" id="sLJ-8l-10O" customClass="HelpViewController" customModule="WeatherSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VgQ-MN-gx8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVy-Eg-yXt">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0W-ib-wRF">
+                                        <rect key="frame" x="10" y="0.0" width="48" height="44"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelAction:" destination="sLJ-8l-10O" eventType="touchUpInside" id="ACe-GS-fc4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.74509803919999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="c0W-ib-wRF" firstAttribute="top" secondItem="aVy-Eg-yXt" secondAttribute="top" id="6r4-M0-JIB"/>
+                                    <constraint firstAttribute="bottom" secondItem="c0W-ib-wRF" secondAttribute="bottom" id="Euf-xB-bki"/>
+                                    <constraint firstItem="c0W-ib-wRF" firstAttribute="leading" secondItem="aVy-Eg-yXt" secondAttribute="leading" constant="10" id="Qeh-Ed-fT6"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="c0W-ib-wRF" secondAttribute="trailing" constant="20" symbolic="YES" id="c08-HK-aev"/>
+                                    <constraint firstAttribute="height" constant="44" id="ySh-uC-SSU"/>
+                                </constraints>
+                            </view>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zhc-nJ-LmY">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="exK-4e-UpT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="exK-4e-UpT" firstAttribute="bottom" secondItem="Zhc-nJ-LmY" secondAttribute="bottom" id="8C7-ik-4ko"/>
+                            <constraint firstItem="Zhc-nJ-LmY" firstAttribute="top" secondItem="aVy-Eg-yXt" secondAttribute="bottom" id="IRX-RG-Kl3"/>
+                            <constraint firstItem="aVy-Eg-yXt" firstAttribute="leading" secondItem="exK-4e-UpT" secondAttribute="leading" id="NPX-1H-U23"/>
+                            <constraint firstItem="exK-4e-UpT" firstAttribute="trailing" secondItem="Zhc-nJ-LmY" secondAttribute="trailing" id="aqT-p4-7gl"/>
+                            <constraint firstItem="Zhc-nJ-LmY" firstAttribute="leading" secondItem="exK-4e-UpT" secondAttribute="leading" id="es6-h4-QSX"/>
+                            <constraint firstItem="aVy-Eg-yXt" firstAttribute="top" secondItem="exK-4e-UpT" secondAttribute="top" id="qaD-Qd-WoW"/>
+                            <constraint firstItem="exK-4e-UpT" firstAttribute="trailing" secondItem="aVy-Eg-yXt" secondAttribute="trailing" id="yLe-Fs-IVX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webpage" destination="Zhc-nJ-LmY" id="6PQ-pb-GMo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yxP-yD-lMS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3063.768115942029" y="-575.22321428571422"/>
+        </scene>
     </scenes>
     <resources>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="homescreen" width="750" height="1624"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="multiply" catalog="system" width="128" height="111"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="text.justify" catalog="system" width="128" height="100"/>

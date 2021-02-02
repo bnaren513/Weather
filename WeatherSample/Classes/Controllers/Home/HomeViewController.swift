@@ -86,6 +86,11 @@ class HomeViewController: UIViewController {
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(actionSheet, animated: true, completion: nil)
     }
+    @IBAction func helpAction(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "HelpViewController") as! HelpViewController
+        self.present(vc, animated: true)
+    }
     func resetHandler(alert: UIAlertAction!) {
         
         viewModel.coreProvider.deleteAllData("Weathers")

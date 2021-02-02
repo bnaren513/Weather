@@ -16,6 +16,7 @@ struct Api {
     static let BASE_URL = "https://api.openweathermap.org/data/2.5/"
     static let Today = "current"
     static let forecast = "forecast"
+    static let webpageurl = "https://openweathermap.org/guide"
     
     
 }
