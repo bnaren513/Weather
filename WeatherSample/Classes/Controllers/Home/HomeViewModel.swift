@@ -2,7 +2,7 @@
 //  HomeViewModel.swift
 //  WeatherSample
 //
-//  Created by Narendra Biswa on 01/02/21.
+//  Created by Narendra Biswa on 17/06/21.
 //
 
 
@@ -62,7 +62,7 @@ class HomeViewModel: NSObject  {
             coreProvider.createData(data: data)
         }
         controller?.cityNameLabel.text = data.name ?? "N/A"
-        controller?.descriptionLabel.text = data.weather?.description_str ?? "N/A"
+        controller?.descriptionLabel.text = data.weather?.totalweatherDescription ?? "N/A"
         
         if  let temp = data.main?.temp{
             let celsius = convertTemp(temp: temp, from: .kelvin, to: .celsius) // 18°C

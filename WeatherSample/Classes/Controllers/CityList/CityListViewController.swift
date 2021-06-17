@@ -2,7 +2,7 @@
 //  CityListViewController.swift
 //  WeatherSample
 //
-//  Created by Narendra Biswa on 01/02/21.
+//  Created by Narendra Biswa on 17/06/21.
 //
 
 import UIKit
@@ -42,6 +42,14 @@ class CityListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         guard let indexPath = tableview.indexPathForSelectedRow else {return}
         tableview.deselectRow(at: indexPath, animated: true)
+    }
+    @IBAction func taponMap(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "AddCityViewController") as! AddCityViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.transitioningDelegate = transitionDelegate
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func tapOnAdd(_ sender: Any)

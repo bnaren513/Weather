@@ -2,7 +2,7 @@
 //  ServiceManager.swift
 //  WeatherSample
 //
-//  Created by Narendra Biswa on 01/02/21.
+//  Created by Narendra Biswa on 17/06/21.
 //
 
 import Foundation
@@ -36,26 +36,17 @@ class ServiceManager :NSObject
     }
     func requestWithParameters(paramaters params: Any, andMethod path: String?, onSuccess: @escaping SuccessCallback, onError: @escaping ErrorCallback) {
         
+        guard let serviceUrl = URL(string: Api.BASE_URL + path!) else { return  }
         
-        let url : NSString = Api.BASE_URL + path! as NSString
-        let urlStr : NSString = url.addingPercentEscapes(using: String.Encoding.utf8.rawValue)! as NSString
-        let searchURL : NSURL = NSURL(string: urlStr as String)!
-        print(searchURL)
+        print(serviceUrl)
         
-       // let serviceurl = URL(string: Api.BASE_URL + path!)
-        var request : URLRequest = URLRequest(url: searchURL as URL)
+        var request : URLRequest = URLRequest(url: serviceUrl as URL)
+        
+        
         request.httpMethod = RequestType.get.rawValue
         request.setValue(ContentType.contentJSON.rawValue, forHTTPHeaderField: "Content-Type")
         _ = (params as AnyObject).description
-        //NSJSONWritingPrettyPrinted
-//        let jsonData: Data? = try? JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
-//        var jsonString: String? = nil
-//        if let aData = jsonData {
-//            jsonString = String(data: aData, encoding: .utf8)
-//        }
-//        print("\(jsonString ?? "")")
-//        let postData: Data? = jsonString?.data(using: .utf8, allowLossyConversion: true)
-//        request.httpBody = postData
+       
         let dataTask = URLSession.shared.dataTask(with: request) {
             data,response,error in
             print("anything")
