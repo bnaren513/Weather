@@ -81,7 +81,7 @@ class AddCityViewController: UIViewController {
                 DispatchQueue.main.async {
                     _self.activityView.isHidden = true
                     _self.activityIndicator.stopAnimating()
-                   // _self.showAlert(message: error?.localizedDescription ?? "")
+                    _self.showAlert(message: error?.localizedDescription ?? "")
                 }
                
                 return
@@ -101,11 +101,8 @@ class AddCityViewController: UIViewController {
             _self.addModel.latitude = firstPlace.location?.coordinate.latitude
             _self.addModel.longitude = firstPlace.location?.coordinate.longitude
             
-            let urlStr = "\(Api.BASE_URL)\(Api.weather)lat=\((_self.addModel.latitude ?? 0))&lon=\(_self.addModel.longitude ?? 0)&appid=\(AppSecureKeys.API_KEY)"
-            guard URL(string: urlStr) != nil else {
-               
-                return
-            }
+           
+            
             guard let text = firstPlace.locality, !text.isEmptyString else {
                 DispatchQueue.main.async {
                     _self.activityView.isHidden = true
@@ -180,15 +177,15 @@ extension AddCityViewController:CLLocationManagerDelegate{
         if status == .authorizedWhenInUse || status == .authorizedAlways {
             locationManager.startUpdatingLocation()
         }else{
-            //            self.showAlert(message: "Location permissions are not enabled. Please enble to access location") {
-            //                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-            //                    return
-            //                }
-            //
-            //                if UIApplication.shared.canOpenURL(settingsUrl) {
-            //                    UIApplication.shared.open(settingsUrl, options: [:], completionHandler: nil)
-            //                }
-            //            }
+                        self.showAlert(message: "Location permissions are not enabled. Please enble to access location") {
+                            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                                return
+                            }
+            
+                            if UIApplication.shared.canOpenURL(settingsUrl) {
+                                UIApplication.shared.open(settingsUrl, options: [:], completionHandler: nil)
+                            }
+                        }
             
 //            self.showAlert(message: "Location permissions are not enabled. Please enble to access location") { [weak self] in
 //                guard let _self = self else {return}

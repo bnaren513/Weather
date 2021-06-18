@@ -69,5 +69,9 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We&apos;ll use this to persanalize your app experience</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We&apos;ll use this to persanalize your app experience</string>
 </dict>
 </plist>
